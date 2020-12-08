@@ -9,5 +9,5 @@ function startTimer(){
 }   else  {
         return advet = confirm ("Реклама исчезнет счерез 5 секунд, вы согласны ?");
     }
-}   return advet;
+}   
 alert(startTimer());
