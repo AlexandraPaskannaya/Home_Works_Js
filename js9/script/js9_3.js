@@ -10,4 +10,4 @@ function startTimer(){
         return startTimer();
     }
 }   
-alert(startTimer());
+startTimer();
