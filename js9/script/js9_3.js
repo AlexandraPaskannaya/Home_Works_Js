@@ -7,7 +7,7 @@ function startTimer(){
     if (advet === true) {
         let timeAd = setTimeout(() => alert ("Реклама"), 5000);
 }   else  {
-        return advet = confirm ("Реклама исчезнет счерез 5 секунд, вы согласны ?");
+        return startTimer();
     }
 }   
 alert(startTimer());
