@@ -22,8 +22,8 @@ class Skyscraper extends House {
    get fullArea () {
     return (this.length * this.width) * this.floors
 }
-    set fullArea (newfloors) {
-    this.floors = newfloors
+    set fullArea (value) {
+    this.floors = Math.round(value / (this.length * this.width) );
 }
     }
 let house = new House (20, 10, 2)
