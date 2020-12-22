@@ -14,16 +14,13 @@ class House {
     }
 }
 class Skyscraper extends House {
-   constructor(value) {
-    super ()
-      this.ofices = value.ofices;
-      this.length = value.length;
-      this.width = value.width;
-      this.floors = value.floors;
+   constructor(length, width, floors, offices) {
+    super (length, width, floors)
+      this.offices = offices;
    }
    //Добавляем свойство fullArea через get/set
    get fullArea () {
-    return (20 * 10) * this.floors
+    return (this.length * this.width) * this.floors
 }
     set fullArea (newfloors) {
     this.floors = newfloors
@@ -31,11 +28,6 @@ class Skyscraper extends House {
     }
 let house = new House (20, 10, 2)
 
-let skyscraper = new Skyscraper ({
-        ofices: 2,
-        length: 40,
-        width: 20,
-        floors: 5
-})
+let skyscraper = new Skyscraper (30, 12, 3, 5)
 
 skyscraper.fullArea;
