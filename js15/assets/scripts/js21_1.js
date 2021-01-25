@@ -4,7 +4,7 @@
 	  Для обработки успешной уборки в then используйте console.log(`Уборка проведена успешно за ${result} секунд`); где result это аргумент
       resolve.*/
 function cleanRoom(dirtyLevel){
-    let result = 0; result++;
+    let result = dirtyLevel<=10;
     return new Promise ((resolve, reject) => {
         setTimeout(()=> {
             resolve(result);
