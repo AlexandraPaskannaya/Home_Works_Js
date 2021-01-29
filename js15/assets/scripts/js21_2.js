@@ -4,20 +4,18 @@
       
 let result = ["str", "str1", "str2", "str", "str2", "str", "str3", "str1", "str4", "str4"];
 
-function countRepeats() {
+function countRepeats(arr) {
 
-let array = {};
-    result.forEach(function(i){
-        if (array[i] != undefined)
-         ++array[i];
+let objResult = {};
+    arr.forEach(function(i){
+        if (objResult[i] != undefined)
+         ++objResult[i];
         else
-         array[i] = 1;
+         objResult[i] = 1;
     });
-let obdj = Object.entries(array).map(([ key, val ]) => ({key, val})).sort((a, b) => b.val - a.val);
+let arrSorted = Object.entries(objResult).sort((a, b) => b[1] - a[1]);
       
-let newObdj = Object.assign({}, obdj);
-
-console.log(newObdj)
+return Object.fromEntries(arrSorted);
 }
-countRepeats()
+console.log(countRepeats(result))
 
