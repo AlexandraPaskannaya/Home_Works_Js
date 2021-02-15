@@ -1,1 +1,42 @@
 
+async function cleanRoom(dirtyLevel){
+    let promise = new Promise ((resolve, reject) => {
+        setTimeout(()=> {resolve(dirtyLevel);
+        },  dirtyLevel * 1000);
+    });
+    let resolve = await promise; 
+}
+
+async function cleanRoom(dirtyLevel){
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(dirtyLevel<=10) {
+                resolve(dirtyLevel)
+            } else {
+                reject('Ошибка! Комната слишком грязная')
+            }
+        }, dirtyLevel * 1000)
+    });
+    let resolve = await promise;  
+    return promise;
+}
+
+async function cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3){
+ 
+    return await cleanRoom(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3)
+    .then(result=> {
+        console.log(`Уборка проведена успешно за ${result} секунд`)
+        return cleanRoom(dirtyLevel_2)
+    })
+    .then(result=> {
+        console.log(`Уборка проведена успешно за ${result} секунд`)
+        return cleanRoom(dirtyLevel_3)
+    })
+    .then(result=> {
+        console.log(`Уборка проведена успешно за ${result} секунд`)
+    })
+    .catch(err => console.log(err))
+}
+
+cleanRooms(3,2,11)
+
